@@ -21,7 +21,7 @@ async Task CreateWebSocketClientAsync(HttpContext context)
         Console.WriteLine("WebSocket request received");
         var webSocket = await context.WebSockets.AcceptWebSocketAsync();
         Console.WriteLine("Client connected");
-        await Echo(context, webSocket);
+        await SendMessageAsync(context, webSocket);
     }
     else {
         context.Response.StatusCode = 400;
