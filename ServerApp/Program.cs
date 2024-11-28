@@ -24,8 +24,8 @@ async Task CreateWebSocketClientAsync(HttpContext context)
         await SendMessageAsync(context, webSocket);
     }
     else {
-        context.Response.StatusCode = 400;
         Console.WriteLine("Not a WebSocket request");
+        context.Response.StatusCode = 400;
     }
 }
 
@@ -39,7 +39,7 @@ async Task SendMessageAsync(HttpContext context, WebSocket webSocket) {
         var message = GetMessage();
         var messageBytes = Encoding.UTF8.GetBytes(message);
         await webSocket.SendAsync(messageBytes, WebSocketMessageType.Text, true, CancellationToken.None);
-        Console.WriteLine($"Sent message: {message}");
+        Console.WriteLine($"Send message: {message}");
 
         var delay = random.Next(1000, 4000);
         await Task.Delay(delay);
