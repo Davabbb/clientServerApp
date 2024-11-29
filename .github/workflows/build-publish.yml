@@ -46,5 +46,6 @@ jobs:
 
     - name: Push Docker images
       run: |
-        docker push davabbb/serverapp:latest
-        docker push davabbb/clientapp:latest
+        docker push davabbb/server:serverapp
+        docker push davabbb/server:clientapp
+
