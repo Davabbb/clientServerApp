@@ -38,8 +38,8 @@ jobs:
 
     - name: Build Docker images
       run: |
-        docker build -t serverapp:latest -f ServerApp/Dockerfile .
-        docker build -t clientapp:latest -f ClientApp/Dockerfile .
+        docker build -t davabbb/server:serverapp -f ServerApp/Dockerfile .
+        docker build -t davabbb/server:clientapp -f ClientApp/Dockerfile .
 
     - name: List Docker images
       run: docker images
