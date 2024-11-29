@@ -41,6 +41,9 @@ jobs:
         docker build -t serverapp:latest -f ServerApp/Dockerfile .
         docker build -t clientapp:latest -f ClientApp/Dockerfile .
 
+    - name: List Docker images
+      run: docker images
+
     - name: Push Docker images
       run: |
         docker push davabbb/serverapp:latest
