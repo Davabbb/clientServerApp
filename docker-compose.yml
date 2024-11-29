@@ -18,6 +18,17 @@ services:
       - server
     networks:
       - app-network
+  
+  tests:
+    build:
+      context: .
+      dockerfile: Tests/Dockerfile
+    depends_on:
+      - server
+    networks:
+      - app-network
+    environment:
+      - RUN_TESTS=false
 
 networks:
   app-network:
